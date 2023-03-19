@@ -1,0 +1,33 @@
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import Script from "next/script";
+import Layout from "../../components/layout";
+
+const FirstPost = () => {
+	return (
+		<Layout>
+			<Head>
+				<title>First Post</title>
+				{/* <script src="https://connect.facebook.net/en_US/sdk.js" /> */}
+			</Head>
+			<Script
+				src="https://connect.facebook.net/en_US/sdk.js"
+				strategy="lazyOnload"
+				onLoad={() => console.log("The script has been loaded correctly...")}
+			></Script>
+			<h1>First Post</h1>
+			<h2>
+				<Link href={"/"}>Back to Home</Link>
+			</h2>
+			<Image
+				src="/images/profile.jpg"
+				height={144}
+				width={144}
+				alt="sample image"
+			/>
+		</Layout>
+	);
+};
+
+export default FirstPost;
